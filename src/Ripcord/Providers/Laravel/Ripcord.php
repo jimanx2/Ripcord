@@ -28,12 +28,12 @@ class Ripcord
     /**
      * @var int
      */
-    protected $uid;
+    public $uid;
 
     /**
      * @var \Ripcord\Client\Client
      */
-    protected $client;
+    public $client;
 
     /**
      * Ripcord constructor.
@@ -58,5 +58,10 @@ class Ripcord
         $common = RipcordBase::client("$this->url/common");
         $this->uid = $common->authenticate($this->db, $this->username, $this->password, []);
         $this->client = RipcordBase::client("$this->url/object");
+    }
+
+    public function execute_kw($object, $method, $clause, $options)
+    {
+        return $this->client->execute_kw($this->db, $this->uid, $this->password, $object, $method, $clause, $options);
     }
 }
