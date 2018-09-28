@@ -60,7 +60,7 @@ class Ripcord
         $this->client = RipcordBase::client("$this->url/object");
     }
 
-    public function execute_kw($object, $method, $clause, $options)
+    public function execute_kw($object, $method, $clause, $options = null)
     {
         return $this->client->execute_kw($this->db, $this->uid, $this->password, $object, $method, $clause, $options);
     }
