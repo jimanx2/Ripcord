@@ -1,5 +1,5 @@
 {
-    "name": "darkaonline/ripcord",
+    "name": "jimanx2/ripcord",
     "description": "RPC client and server around PHP's xmlrpc library",
     "keywords": ["RPC", "XML", "XMLRPC"],
     "require": {
